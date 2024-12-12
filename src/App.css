@@ -2,17 +2,22 @@
   text-align: center;
   font-family: Arial, sans-serif;
   padding: 20px;
-  background: linear-gradient(135deg, #f9f9f9, #e0e0e0); /* Soft background gradient */
+  background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
   border-radius: 10px;
+  animation: fadeIn 1s ease-out;
 }
 
 .controls {
   margin: 20px 0;
+  opacity: 0;
+  animation: slideUp 0.8s forwards 0.5s; /* Controls appear with a slide-up effect */
 }
 
 .controls label {
   margin-right: 15px;
   font-weight: bold;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards 1s; /* Labels fade in */
 }
 
 .canvas-container {
@@ -22,9 +27,11 @@
   width: 500px;
   height: 400px;
   border: 2px solid #ccc;
-  background-color: #ffffff; /* White background for the canvas section */
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: scale(0.9);
+  animation: zoomIn 0.8s forwards 1.5s; /* Canvas container zooms in */
 }
 
 .uploaded-image {
@@ -35,6 +42,8 @@
   pointer-events: none;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards 2s; /* Image fades in */
 }
 
 canvas {
@@ -42,16 +51,22 @@ canvas {
   top: 0;
   left: 0;
   z-index: 1;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards 2.5s; /* Canvas fades in */
 }
 
 .output-container {
   margin-top: 30px;
+  opacity: 0;
+  animation: slideUp 0.8s forwards 2.5s; /* Output container slides up */
 }
 
 .exported-images {
   display: flex;
   justify-content: center;
   gap: 30px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards 3s; /* Images section fades in */
 }
 
 .exported-images img {
@@ -59,5 +74,41 @@ canvas {
   border: 1px solid #ccc;
   padding: 5px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding subtle shadow on images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exported-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
