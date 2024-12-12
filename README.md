@@ -21,4 +21,23 @@ npm start
 The application should now be running on http://localhost:3000.
 
 
+3. Libraries Used
+   React: A JavaScript library for building user interfaces.
+   Canvas: For rendering images and drawing.
+
+
+4.  Managing Image Uploads:
+
+Challenge: Handling image uploads and ensuring they are correctly rendered on the canvas.
+Solution: Implemented proper image resizing and scaling with the help of Fabric.js to maintain aspect ratios and make the uploads responsive.
+Canvas Interactivity:
+
+Challenge: Allowing users to draw on the canvas while also uploading and displaying images.
+Solution: Used Fabric.js to manage the drawing and interactions on the canvas, ensuring the image overlays are rendered properly.
+Animation Performance:
+
+Challenge: Ensuring smooth animations and transitions while rendering images and applying filters.
+Solution: Utilized GSAP for efficient animation handling, which provided better performance compared to traditional CSS animations.   
+
+
 
